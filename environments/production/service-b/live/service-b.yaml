@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-b
+data:
+  db.url: http://database.production
+  flavour: live

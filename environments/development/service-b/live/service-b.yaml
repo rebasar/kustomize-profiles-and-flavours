@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-b
+spec:
+  template:
+    spec:
+      containers:
+      - name: service-b
+        image: service-b:1.0.1-SNAPSHOT
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-b
+data:
+  flavour: live
+  db.url: http://database.development

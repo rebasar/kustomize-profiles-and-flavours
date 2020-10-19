@@ -1,0 +1,10 @@
+bases:
+  - ../../applications
+  - service-b/canary
+  - service-b/live
+  - service-b/prio
+
+patchesStrategicMerge:
+  - service-a.yaml
+
+namespace: production

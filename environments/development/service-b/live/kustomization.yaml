@@ -1,0 +1,5 @@
+bases:
+  - ../../../../applications/service-b/flavours/live
+
+patchesStrategicMerge:
+    - service-b.yaml

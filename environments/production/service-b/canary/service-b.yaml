@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-b
+spec:
+  template:
+    spec:
+      containers:
+      - name: service-b
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "100m"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-b
+data:
+  db.url: http://database.production
+  flavour: canary

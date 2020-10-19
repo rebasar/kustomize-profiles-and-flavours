@@ -1,0 +1,6 @@
+bases:
+  - ../../../../applications/service-b/flavours/prio
+
+
+patchesStrategicMerge:
+  - service-b.yaml

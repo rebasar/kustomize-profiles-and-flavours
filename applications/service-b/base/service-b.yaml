@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-b
+spec:
+  selector:
+    matchLabels:
+      app: service-b
+  template:
+    metadata:
+      labels:
+        app: service-b
+    spec:
+      containers:
+      - name: service-b
+        image: service-b:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        envFrom:
+            - configMapRef:
+                  name: service-b
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-b
+data:
+  db.url: http://database.environment

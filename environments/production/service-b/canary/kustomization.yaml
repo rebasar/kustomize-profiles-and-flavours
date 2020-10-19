@@ -1,0 +1,6 @@
+bases:
+  - ../../../../applications/service-b/flavours/canary
+
+
+patchesStrategicMerge:
+  - service-b.yaml

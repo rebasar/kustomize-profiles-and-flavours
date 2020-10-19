@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-a
+spec:
+  template:
+    spec:
+      containers:
+      - name: service-a
+        image: service-a:1.0.0
+        ports:
+        - containerPort: 9001
